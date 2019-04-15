@@ -45,7 +45,10 @@ $(function() {
          */
         it('all feed has name', function() {
             for (feed of allFeeds) {
-                expect(feed.name.trim().length).toBeGreaterThan(0);
+                expect(feed.name).toBeDefined();
+                if (feed.name != null) {
+                    expect(feed.name.trim().length).toBeGreaterThan(0);
+                }
               }
         });
     });
